@@ -1,4 +1,4 @@
-![](ba-finder_banner.jpg)
+![](../ba-finder_banner.jpg)
 
 ## Brand Ambassador Finder
 The ultimate goal of this *marketing data science* application is to help brands identify their organic -and influential- *ambassadors*, efficiently and objectively.
@@ -37,18 +37,18 @@ You can see the code (if this is the "-with-code" version of the README), along 
 First, let's reveal our test user's specified target brand, keyword filter (to avoid including  employees/resellers), and Klout score minimum. Here's what they requested.  
 
 
-|                                                                                                                                              |
-|:---------------------------------------------------------------------------------------------------------------------------------------------|
-|SingularityU                                                                                                                                  |
-|Singularity University empowers leaders to leverage exponential technologies to solve global grand challenges. For tech news: @SingularityHub |
-|http://t.co/N6WkE6FDLF                                                                                                                        |
+|                                                                                            |
+|:-------------------------------------------------------------------------------------------|
+|Code for America                                                                            |
+|Government can work for the people, by the people, in the 21st century. Help us make it so. |
+|http://t.co/SdrDB6SXsQ                                                                      |
 
 ```
 ## [1] "Klout Score Minimum: 45"
 ```
 
 ```
-## [1] "Keyword Filter(s): singularity, su labs, su hub, kurzweill, diamandis"
+## [1] "Keyword Filter(s): @codeforamerica, cfa"
 ```
 
 #### Exploratory Analysis: Target Brand's Retweet Counts
@@ -62,12 +62,12 @@ Now, let's isolate the brand's top 60 tweets, by retweet count, then preview and
 
 |created_at                     |text                                                                                                                                         | retweet_count| favorite_count|
 |:------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|-------------:|--------------:|
-|Sun Dec 20 18:03:02 +0000 2015 |For the first time, less than 10% of the world is living in extreme poverty, World Bank says https://t.co/w2ZPJosPYH https://t.co/mQWRMdknPj |            77|             42|
-|Mon Oct 12 21:07:00 +0000 2015 |NASA is opening up hundreds of patents to inventors, for free http://t.co/mNImUsKI0p                                                         |            57|             43|
-|Sat Nov 21 18:58:13 +0000 2015 |“Simply put, we can’t keep preparing children for a world that doesn’t exist.” https://t.co/7svmISsRUW                                       |            50|             27|
-|Wed Oct 14 18:01:42 +0000 2015 |#VR &amp; #AR Will Soon Be Worth $150 Billion. Here Are The Major Players http://t.co/2sfCkJwfOE via @FastCompany http://t.co/TMkPNvNBmL     |            46|             40|
-|Wed Dec 16 17:02:39 +0000 2015 |For the first time, less than 10% of the world is living in extreme poverty, World Bank says https://t.co/QhQdGpy3M0 https://t.co/Ns5tAjnJO9 |            44|             22|
-|Tue Nov 10 20:50:40 +0000 2015 |Now these are some healthcare goals to aspire to! @ajadad of @uoft speaking @ExponentialMed #xmed https://t.co/QiJkL514DY                    |            44|             48|
+|Wed Sep 30 23:45:12 +0000 2015 |"Starting w/ users isn?t just how we shld be making tech, it?s how we shld be making govt" - @pahlkadot at #cfasummit http://t.co/OtwVJGREKO |           132|            144|
+|Thu Aug 06 00:43:19 +0000 2015 |Engineering 21st century government #ILookLikeAnEngineer http://t.co/3Gf10a62gg                                                              |            78|            107|
+|Tue Nov 17 19:03:23 +0000 2015 |Welcome to the CfA network 2016 fellows and #government partners! https://t.co/pH45pdL8VI https://t.co/blzeHdPZkJ                            |            44|             38|
+|Wed Sep 30 00:41:52 +0000 2015 |Code for America Brigade network at #Oakland City Hall! Lookin good, #CfASummit http://t.co/toExz2atwr                                       |            43|             68|
+|Fri Oct 02 19:58:51 +0000 2015 |If we fail, let's not fail because of a lack of imagination. - @pahlkadot at #cfasummit                                                      |            38|             32|
+|Tue Feb 16 18:34:29 +0000 2016 |Love your community and want to make it better? Go to a #CodeAcross event near you, 3/5-6 https://t.co/4aSZsNz7EO https://t.co/mF9dtYWgfV    |            37|             28|
 *You can [view the CSV output of top 60 tweets here >>](results/top100-tweets.csv)*  
 
 #### 'Significant' Retweeters of Top Tweets
@@ -83,19 +83,19 @@ We then preview and save these retweeters, while excluding those whose bios/desc
 
 
 ```
-## [1] "Unique retweeters of top tweets:  1160"
+## [1] "Unique retweeters of top tweets:  916"
 ```
 
 ![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6-1.png)
 
-| RT_count|id_str     |name              |description                                                                                                                                                      |
-|--------:|:----------|:-----------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|       16|2221351512 |Ramón Villasante  |Internet social entrepreneur empowering people, positive social impact products, services & orgs for @GlobalGoalsUN #eLearning for: #HeForShe #COP21 #SEL #ICT4D |
-|       10|3633918197 |NUKU Labs         |3D Printed prosthetics and prosthetic leg covers. Medical modelling. Retweeting industry-related news.                                                           |
-|        9|19600468   |Abhishek Mathur   |A human and a technoprogressive transhuman singularitarian..also a Bright                                                                                        |
-|        8|120732574  |Javier Caceres    |Administrador Sistemas SCADA. Intereses: ciberseguridad, fotografía, literatura...                                                                               |
-|        8|21330040   |Mischa Anna Selis |@miepsja is on a Twitter time-out & social media sabattical.                                                                                                     |
-|        7|2323123429 |Moblized Tech     |Covering technology for small business. Brought to you by @Moblized. #ExponentialTech #Beacons #Crowdfunding #Biztech #Fintech                                   |
+| RT_count|id_str     |name                 |description                                                                                                                                                      |
+|--------:|:----------|:--------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|       41|2160369655 |Ask Apps Developers  |Ask app development questions from enterprise mobility experts & get plain English answers on #mhealth #mbanking #mcommerce, #ios #android #windows apps #html5  |
+|       13|3191270163 |Code for Princeton   |We are developers, designers, community organizers, and local government, working together to innovate for our town. Like us on Facebook: http://t.co/J5omQ0iQ7K |
+|       10|2384071    |Tim O'Reilly         |Founder and CEO, O'Reilly Media. Watching the alpha geeks, sharing their stories, helping the future unfold.                                                     |
+|        9|1653260270 |Rick Cole            |Public servant. Father. Innovator. Happy warrior. City Manager @santamonicacity Opinions mine, RTs not endorsements                                              |
+|        9|868157960  |Code for Boston      |Reinventing government and civic responsibility in Boston. Connect at hello@codeforboston.org                                                                    |
+|        8|24028758   |Microsoft NewEngland |Microsoft New England promotes research, software #innovation & community in the heart of #kendallsquare.                                                        |
 
 *You can [view the CSV output of retweeters here >>](results/retweeters.csv)*  
 
@@ -105,11 +105,11 @@ Just to check Klout's API, and our integration of it, let's get the Klout ID and
 
 
 ```
-## [1] "240942597917308894"
+## [1] "224898523706987390"
 ```
 
 ```
-## [1] "Test Twitter handle: RamonVillasante --- Name: Ramón Villasante --- Klout score: 43.659"
+## [1] "Test Twitter handle: AskAppDev --- Name: Ask Apps Developers --- Klout score: 46.391"
 ```
 
 #### Finally, Your Brand Ambassadors...
@@ -121,19 +121,19 @@ Below is a preview of your *brand ambassadors*... or those retweeters who are *a
 
 
 ```
-## [1] "Total brand ambassadors identified: 8"
+## [1] "Total brand ambassadors identified: 12"
 ```
 
 
 
-| RT_Count|Name                |Twitter_Handle |URL                     |Description                                                                                                                                                      | Klout_Score|
-|--------:|:-------------------|:--------------|:-----------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------:|
-|        8|Mischa Anna Selis   |miepsja        |https://t.co/hoNRk3Nm2E |@miepsja is on a Twitter time-out & social media sabattical.                                                                                                     |       61.52|
-|        7|thinkubator         |thinkubator_dk |http://t.co/LgkDC75S2y  |thinkubator is a corporate think tank merged with a startup incubator, which currently accelerates 10 high potential startups into the Stratosphere!             |       45.76|
-|        7|Megan Eskey         |meganesque     |http://t.co/mF7WlsdOJI  |OpenGov Consultant with many years at NASA.                                                                                                                      |       53.68|
-|        6|Ronald A. Primas,MD |Primas         |http://t.co/b4AXUGER2s  |Dr. Primas is a holistic board certified internist/concierge doctor in NYC available 24/7 for housecalls,urgent & routine care,travel medicine & lifestyle mgmt. |       48.96|
-|        5|SISU LAB            |EmiliaLahti    |https://t.co/KWp9oCV5Dn |Working on a PhD on #sisu (strength + determination in the face of adversity). Human rights, violence prevention, social change <U+2665> #SISUnotSILENCE         |       57.70|
-|        4|Katie (KE)          |keKatie        |https://t.co/A9t0I5lQFl |                                                                                                                                                                 |       45.49|
+| RT_Count|Name                 |Twitter_Handle |URL                    |Description                                                                                                                                                      | Klout_Score|
+|--------:|:--------------------|:--------------|:----------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------:|
+|       41|Ask Apps Developers  |AskAppDev      |http://t.co/ru6rZhRWwu |Ask app development questions from enterprise mobility experts & get plain English answers on #mhealth #mbanking #mcommerce, #ios #android #windows apps #html5  |       46.39|
+|       10|Tim O'Reilly         |timoreilly     |http://t.co/5086iX7oyT |Founder and CEO, O'Reilly Media. Watching the alpha geeks, sharing their stories, helping the future unfold.                                                     |       80.44|
+|        9|Code for Boston      |CodeForBoston  |http://t.co/GFNIyvcHfk |Reinventing government and civic responsibility in Boston. Connect at hello@codeforboston.org                                                                    |       48.68|
+|        8|Microsoft NewEngland |MSNewEngland   |http://t.co/BHlT8f1Atn |Microsoft New England promotes research, software #innovation & community in the heart of #kendallsquare.                                                        |       59.78|
+|        8|Civic Innov. Project |CivInnovation  |http://t.co/8wzSzu9bAF |National #civictech platform focused on creating engaged/informed communities & transforming government innovation, founded by @landpolicy fellow Lourdes German |       48.47|
+|        5|Microsoft Chicago    |MSFTChicago    |http://t.co/kGbIiCgmbd |Microsoft Chicago brings innovative and transformative solutions to #Chicago?s civic community through #civictech and engagement, #STEM education, and more.     |       55.92|
 *[View your full Brand Ambassadors list in CSV format >>](results/brand-ambassadors.csv)*  
 
 ***
@@ -156,17 +156,19 @@ As alluded to above, a *zero-truncated* Poisson distribution isn't exactly the s
 
 | RT_count|    p_pois|  ztp_pois|
 |--------:|---------:|---------:|
-|       16| 0.0000000| 0.0000000|
-|       10| 0.0000002| 0.0000003|
-|        9| 0.0000018| 0.0000025|
-|        8| 0.0000136| 0.0000182|
-|        7| 0.0000907| 0.0001217|
-|        6| 0.0005423| 0.0007277|
-|        5| 0.0028541| 0.0038300|
-|        4| 0.0129993| 0.0174442|
-|        3| 0.0501001| 0.0672312|
-|        2| 0.1586424| 0.2128882|
-|        1| 0.3968058| 0.5324887|
+|       41| 0.0000000| 0.0000000|
+|       13| 0.0000000| 0.0000000|
+|       12| 0.0000000| 0.0000000|
+|       10| 0.0000004| 0.0000005|
+|        9| 0.0000031| 0.0000041|
+|        8| 0.0000218| 0.0000285|
+|        7| 0.0001377| 0.0001796|
+|        6| 0.0007749| 0.0010111|
+|        5| 0.0038425| 0.0050136|
+|        4| 0.0164996| 0.0215286|
+|        3| 0.0600202| 0.0783143|
+|        2| 0.1797346| 0.2345177|
+|        1| 0.4267129| 0.5567751|
 
 ```
 ## [1] "Alpha if Poisson: 4 or more retweets."

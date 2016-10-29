@@ -1,4 +1,4 @@
-![](ba-finder_banner.jpg)
+![](../ba-finder_banner.jpg)
 
 ## Brand Ambassador Finder
 The ultimate goal of this *marketing data science* application is to help brands identify their organic -and influential- *ambassadors*, efficiently and objectively.
@@ -37,18 +37,18 @@ You can see the code (if this is the "-with-code" version of the README), along 
 First, let's reveal our test user's specified target brand, keyword filter (to avoid including  employees/resellers), and Klout score minimum. Here's what they requested.  
 
 
-|                                                                                                                                              |
-|:---------------------------------------------------------------------------------------------------------------------------------------------|
-|SingularityU                                                                                                                                  |
-|Singularity University empowers leaders to leverage exponential technologies to solve global grand challenges. For tech news: @SingularityHub |
-|http://t.co/N6WkE6FDLF                                                                                                                        |
+|                       |
+|:----------------------|
+|Brian Solis            |
+|http://t.co/NTX8aUxFon |
+|http://t.co/5SfnJrYjFZ |
 
 ```
 ## [1] "Klout Score Minimum: 45"
 ```
 
 ```
-## [1] "Keyword Filter(s): singularity, su labs, su hub, kurzweill, diamandis"
+## [1] "Keyword Filter(s): altimeter, prophet, solis"
 ```
 
 #### Exploratory Analysis: Target Brand's Retweet Counts
@@ -60,14 +60,14 @@ Before we perform any statistical 'magic,' we should plot the target brand's dis
 Now, let's isolate the brand's top 60 tweets, by retweet count, then preview and save that list, in case we'd like to analyze its contents later. I'll elaborate on why we're using the top 60 before I complete this.
 
 
-|created_at                     |text                                                                                                                                         | retweet_count| favorite_count|
-|:------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|-------------:|--------------:|
-|Sun Dec 20 18:03:02 +0000 2015 |For the first time, less than 10% of the world is living in extreme poverty, World Bank says https://t.co/w2ZPJosPYH https://t.co/mQWRMdknPj |            77|             42|
-|Mon Oct 12 21:07:00 +0000 2015 |NASA is opening up hundreds of patents to inventors, for free http://t.co/mNImUsKI0p                                                         |            57|             43|
-|Sat Nov 21 18:58:13 +0000 2015 |“Simply put, we can’t keep preparing children for a world that doesn’t exist.” https://t.co/7svmISsRUW                                       |            50|             27|
-|Wed Oct 14 18:01:42 +0000 2015 |#VR &amp; #AR Will Soon Be Worth $150 Billion. Here Are The Major Players http://t.co/2sfCkJwfOE via @FastCompany http://t.co/TMkPNvNBmL     |            46|             40|
-|Wed Dec 16 17:02:39 +0000 2015 |For the first time, less than 10% of the world is living in extreme poverty, World Bank says https://t.co/QhQdGpy3M0 https://t.co/Ns5tAjnJO9 |            44|             22|
-|Tue Nov 10 20:50:40 +0000 2015 |Now these are some healthcare goals to aspire to! @ajadad of @uoft speaking @ExponentialMed #xmed https://t.co/QiJkL514DY                    |            44|             48|
+|created_at                     |text                                                                                                                                                 | retweet_count| favorite_count|
+|:------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------|-------------:|--------------:|
+|Mon Dec 21 19:21:11 +0000 2015 |The Miss Universe Design Fail: This isn’t @IAmSteveHarvey's fault alone. #X https://t.co/MZtRWKn7dZ https://t.co/2Kur2GScFP                          |           105|            108|
+|Fri Nov 27 17:20:52 +0000 2015 |The embrace…that moment when you have my attention &amp; I have yours &amp; we do something amazing. https://t.co/sovhXS6Wk8 https://t.co/Z4nKbxNn2Y |            97|            173|
+|Sat Nov 07 18:02:07 +0000 2015 |The future is shaped by tech’s impact on society &amp; what's upset or inspired as a result https://t.co/xmyOCVJgRW https://t.co/qqG9uifR5N          |            96|             94|
+|Tue Feb 09 19:20:27 +0000 2016 |"We need to rethink our strategy of hoping the Internet will just go away." - said, most executives you know https://t.co/qOYJcExTEk                 |            89|            111|
+|Tue Jan 05 22:28:47 +0000 2016 |Look at how people use technology not at technology people use. #ces #ces2016 https://t.co/ZvKjjLi5zZ                                                |            84|            108|
+|Mon Feb 29 16:49:39 +0000 2016 |Smart CMOs and CDOs Take an Opposite Approach to Digital Transformation [8 Success Factors] via @forbes https://t.co/XQJ9D0sVP1                      |            79|            112|
 *You can [view the CSV output of top 60 tweets here >>](results/top100-tweets.csv)*  
 
 #### 'Significant' Retweeters of Top Tweets
@@ -83,19 +83,19 @@ We then preview and save these retweeters, while excluding those whose bios/desc
 
 
 ```
-## [1] "Unique retweeters of top tweets:  1160"
+## [1] "Unique retweeters of top tweets:  1891"
 ```
 
 ![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6-1.png)
 
-| RT_count|id_str     |name              |description                                                                                                                                                      |
-|--------:|:----------|:-----------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|       16|2221351512 |Ramón Villasante  |Internet social entrepreneur empowering people, positive social impact products, services & orgs for @GlobalGoalsUN #eLearning for: #HeForShe #COP21 #SEL #ICT4D |
-|       10|3633918197 |NUKU Labs         |3D Printed prosthetics and prosthetic leg covers. Medical modelling. Retweeting industry-related news.                                                           |
-|        9|19600468   |Abhishek Mathur   |A human and a technoprogressive transhuman singularitarian..also a Bright                                                                                        |
-|        8|120732574  |Javier Caceres    |Administrador Sistemas SCADA. Intereses: ciberseguridad, fotografía, literatura...                                                                               |
-|        8|21330040   |Mischa Anna Selis |@miepsja is on a Twitter time-out & social media sabattical.                                                                                                     |
-|        7|2323123429 |Moblized Tech     |Covering technology for small business. Brought to you by @Moblized. #ExponentialTech #Beacons #Crowdfunding #Biztech #Fintech                                   |
+| RT_count|id_str     |name               |description                                                                                                                                                                                   |
+|--------:|:----------|:------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|       30|180317088  |Roberto Re         |Ich bin ein Mailänder. Networker, Security analytical thinker, Fulltime student of the news, RT=FYI. ½ROBot #TweetMI #Milano , ingegnere.                                                     |
+|       25|1124048252 |blackprmachine     |To win today PR must be Social and Mobile. Our winning formula is DSMD=Disrupt. Social . Mobile . Digital.                                                                                    |
+|       18|939853778  |Beat Digital       |A Beat Digital é uma agência especializada em marketing digital e blogs. #MarketingDigital #dicaswordpress #redessociais #onlinemarketing #marketingmix #blogs                                |
+|       17|251286406  |Warren Lee         |Pianist, teacher, REALpreneur, and businessman. I love knowledge and the grind. My latest piano cover: Alla Turca Jazz <U+2B07><U+FE0F><U+2B07><U+FE0F><U+2B07><U+FE0F> link below. NO DM PLS |
+|       16|3900651875 |Estratégia Digital |O Blog Estratégia Digital é um ponto de encontro sobre marketing digital.  #MarketingDigital #dicaswordpress #redessociais #onlinemarketing #marketingmix                                     |
+|       15|872276665  |Julio Liarte       |Antes era funcionario... ahora, EMPRENDEDOR LIBRE!! Creador del sistema http://t.co/By1WfDh1aJ                                                                                                |
 
 *You can [view the CSV output of retweeters here >>](results/retweeters.csv)*  
 
@@ -105,11 +105,11 @@ Just to check Klout's API, and our integration of it, let's get the Klout ID and
 
 
 ```
-## [1] "240942597917308894"
+## [1] "5348029325654862"
 ```
 
 ```
-## [1] "Test Twitter handle: RamonVillasante --- Name: Ramón Villasante --- Klout score: 43.659"
+## [1] "Test Twitter handle: robertore62 --- Name: Roberto Re --- Klout score: 68.475"
 ```
 
 #### Finally, Your Brand Ambassadors...
@@ -121,19 +121,19 @@ Below is a preview of your *brand ambassadors*... or those retweeters who are *a
 
 
 ```
-## [1] "Total brand ambassadors identified: 8"
+## [1] "Total brand ambassadors identified: 24"
 ```
 
 
 
-| RT_Count|Name                |Twitter_Handle |URL                     |Description                                                                                                                                                      | Klout_Score|
-|--------:|:-------------------|:--------------|:-----------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------:|
-|        8|Mischa Anna Selis   |miepsja        |https://t.co/hoNRk3Nm2E |@miepsja is on a Twitter time-out & social media sabattical.                                                                                                     |       61.52|
-|        7|thinkubator         |thinkubator_dk |http://t.co/LgkDC75S2y  |thinkubator is a corporate think tank merged with a startup incubator, which currently accelerates 10 high potential startups into the Stratosphere!             |       45.76|
-|        7|Megan Eskey         |meganesque     |http://t.co/mF7WlsdOJI  |OpenGov Consultant with many years at NASA.                                                                                                                      |       53.68|
-|        6|Ronald A. Primas,MD |Primas         |http://t.co/b4AXUGER2s  |Dr. Primas is a holistic board certified internist/concierge doctor in NYC available 24/7 for housecalls,urgent & routine care,travel medicine & lifestyle mgmt. |       48.96|
-|        5|SISU LAB            |EmiliaLahti    |https://t.co/KWp9oCV5Dn |Working on a PhD on #sisu (strength + determination in the face of adversity). Human rights, violence prevention, social change <U+2665> #SISUnotSILENCE         |       57.70|
-|        4|Katie (KE)          |keKatie        |https://t.co/A9t0I5lQFl |                                                                                                                                                                 |       45.49|
+| RT_Count|Name               |Twitter_Handle |URL                     |Description                                                                                                                                                                                   | Klout_Score|
+|--------:|:------------------|:--------------|:-----------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------:|
+|       30|Roberto Re         |robertore62    |https://t.co/66RPiwGoLA |Ich bin ein Mailänder. Networker, Security analytical thinker, Fulltime student of the news, RT=FYI. ½ROBot #TweetMI #Milano , ingegnere.                                                     |       68.48|
+|       18|Beat Digital       |BeatDigitalMkt |http://t.co/4h7eGNITdV  |A Beat Digital é uma agência especializada em marketing digital e blogs. #MarketingDigital #dicaswordpress #redessociais #onlinemarketing #marketingmix #blogs                                |       50.09|
+|       17|Warren Lee         |RhapsodyStudio |https://t.co/gjzZe5a1O7 |Pianist, teacher, REALpreneur, and businessman. I love knowledge and the grind. My latest piano cover: Alla Turca Jazz <U+2B07><U+FE0F><U+2B07><U+FE0F><U+2B07><U+FE0F> link below. NO DM PLS |       45.90|
+|       16|Estratégia Digital |blogestrategia |http://t.co/4h7eGNITdV  |O Blog Estratégia Digital é um ponto de encontro sobre marketing digital.  #MarketingDigital #dicaswordpress #redessociais #onlinemarketing #marketingmix                                     |       48.11|
+|       15|Julio Liarte       |reliarte       |http://t.co/J1rZvZASPE  |Antes era funcionario... ahora, EMPRENDEDOR LIBRE!! Creador del sistema http://t.co/By1WfDh1aJ                                                                                                |       45.55|
+|       10|Shaun Dakin        |DakinMarketing |http://t.co/7LFfJvu7kA  |Twitter account for GMU Marketing Class with Professor @ShaunDakin  Current Hashtag #GMU315                                                                                                   |       46.28|
 *[View your full Brand Ambassadors list in CSV format >>](results/brand-ambassadors.csv)*  
 
 ***
@@ -156,20 +156,25 @@ As alluded to above, a *zero-truncated* Poisson distribution isn't exactly the s
 
 | RT_count|    p_pois|  ztp_pois|
 |--------:|---------:|---------:|
+|       30| 0.0000000| 0.0000000|
+|       25| 0.0000000| 0.0000000|
+|       18| 0.0000000| 0.0000000|
+|       17| 0.0000000| 0.0000000|
 |       16| 0.0000000| 0.0000000|
-|       10| 0.0000002| 0.0000003|
-|        9| 0.0000018| 0.0000025|
-|        8| 0.0000136| 0.0000182|
-|        7| 0.0000907| 0.0001217|
-|        6| 0.0005423| 0.0007277|
-|        5| 0.0028541| 0.0038300|
-|        4| 0.0129993| 0.0174442|
-|        3| 0.0501001| 0.0672312|
-|        2| 0.1586424| 0.2128882|
-|        1| 0.3968058| 0.5324887|
+|       15| 0.0000000| 0.0000000|
+|       10| 0.0000001| 0.0000001|
+|        9| 0.0000008| 0.0000011|
+|        8| 0.0000063| 0.0000088|
+|        7| 0.0000463| 0.0000652|
+|        6| 0.0003046| 0.0004287|
+|        5| 0.0017632| 0.0024816|
+|        4| 0.0088234| 0.0124188|
+|        3| 0.0373021| 0.0525022|
+|        2| 0.1292020| 0.1818498|
+|        1| 0.3516199| 0.4948998|
 
 ```
-## [1] "Alpha if Poisson: 4 or more retweets."
+## [1] "Alpha if Poisson: 3 or more retweets."
 ```
 
 ```
